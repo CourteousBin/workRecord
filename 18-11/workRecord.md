@@ -651,3 +651,81 @@ function isPalindrome1(val){
     + https://juejin.im/entry/55de6f5f60b271314aed0917
 - vue3-cli
     + https://juejin.im/post/5bfb3da25188251a82660fed
+
+## 2018-11-29
+
+- waiper 实现商品滚动
+    + http://bbs.swiper.com.cn/forum.php?mod=viewthread&tid=1284
+```javascript
+$(function(){
+
+                // 无缝滚动
+                var swiper = new Swiper('.swiper-container', {
+                    speed:6000,
+                    autoplay:{
+                         delay: 1,
+                    },
+                    slidesPerView: 5, // 显示个数
+                    spaceBetween: 50, // 间隔
+                    grabCursor : true,    // 是否为手装
+                    loop : true,  // 无线循环
+                    freeMode:true,
+                });
+
+                // 鼠标滑过悬停  离开开启
+                $(".swiper-container").mouseenter(function () {
+                    swiper.autoplay.stop();
+                }).mouseleave(function(){
+                    swiper.autoplay.start();
+                });
+
+
+
+                // 实力展示轮播 公司简介 店铺公告 经销商说明
+                var swiper_company_profile = new Swiper('.swiper-company-profile', {
+                    simulateTouch : false, // 禁止鼠标触摸
+                });
+
+                $('.nav-btn').mouseenter(function(){
+                    var that = this;
+                    // 获取id
+                    var id = this.dataset.id;
+
+                    // 跳转指定
+                    swiper_company_profile.slideTo(id, 1000,show());//切换到第一个slide，速度为1秒
+
+                    // 回调函数不能直接写在 后面 , 只能
+                    function show(){
+                        $('.nav-btn').removeClass('right-nav-active');
+                        $(that).addClass('right-nav-active');
+                    }
+
+                })
+
+
+                // 实力展示轮播 无缝滚动
+                var swiper_company_footer = new Swiper('.swiper-company-footer', {
+                    speed:1000,
+                    autoplay:{
+                         delay: 1000,
+                    },
+                    slidesPerView: 4, // 显示个数
+                    spaceBetween: 50, // 间隔
+                    grabCursor : true,    // 是否为手装
+                    loop : true,  // 无线循环
+                    navigation: {
+                      nextEl: '.swiper-button-next',
+                      prevEl: '.swiper-button-prev',
+                    },
+                });
+
+                 // 鼠标滑过悬停  离开开启
+                $(".swiper-company-footer").mouseenter(function () {
+                    swiper_company_footer.autoplay.stop();
+                }).mouseleave(function(){
+                    swiper_company_footer.autoplay.start();
+                });
+
+  
+            })
+```
