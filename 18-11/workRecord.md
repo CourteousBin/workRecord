@@ -729,3 +729,38 @@ $(function(){
   
             })
 ```
+
+# 2018-11-30
+
+- PHP 上传视频
+    + 原生 input 上传
+ ```html
+ <!-- enctype="multipart/form-data" -->
+ <form action="" method="post" id="edit_from" enctype="multipart/form-data">
+ <!-- type="file"  accept="video/*" -->
+    <input name="video" id="video" type="file"  accept="video/*" />
+ </form>
+ ```
+         * 上传失败提示码
+             - PHP $_FILES error码对应错误信息
+             - 0： 上传成功
+             - 1：  上传文件超出php配置max_upload_filesize限制
+             - 2： 上传文件超出html表单限制
+             - 3： 文件只有部分被上传 
+             - 4： 没有上传文件
+             - 6： 没有找不到临时文件夹 
+             - 7： 文件写入失败（可能是文件权限不足）
+             - 8： php文件上传扩展file没有打开 
+         * 解决错误代码 1
+             - php 上传大文件——配置upload_max_filesize和post_max_size 
+             - http://blog.sina.com.cn/s/blog_16698a9a40102yai4.html
+             - 在查看程序中有没有限定 上传文件大小的配置
+             - 有就修改
+ - PHP 模糊查询
+     + https://www.cnblogs.com/jpfss/p/6944245.html
+ - PHP 左链接
+     + https://blog.csdn.net/plg17/article/details/78758593
+     + https://blog.csdn.net/plg17/article/details/78758593
+     ```php
+$re_count = $db->getOne("SELECT COUNT(*) FROM {$config->db_prefix}article_info as a LEFT JOIN {$config->db_prefix}article_cat as c ON a.cat_id=c.cat_id WHERE parent_id in(SELECT cat_id FROM {$config->db_prefix}article_cat WHERE cat_name='案例视频') and 1  {$where}");
+     ```
