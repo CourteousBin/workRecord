@@ -764,3 +764,57 @@ $(function(){
      ```php
 $re_count = $db->getOne("SELECT COUNT(*) FROM {$config->db_prefix}article_info as a LEFT JOIN {$config->db_prefix}article_cat as c ON a.cat_id=c.cat_id WHERE parent_id in(SELECT cat_id FROM {$config->db_prefix}article_cat WHERE cat_name='案例视频') and 1  {$where}");
      ```
+
+ # 2018-12-6
+
+- 效率
+    + 增加专注力
+    + 快速编写代码
+    + 以免加班
+- 小程序音频组件
+    + 第一种
+        + https://developers.weixin.qq.com/miniprogram/dev/component/audio.html
+        + auido 不支持 iphone 
+        + 如果坚持要用 audio , 自己写两个按钮,对应播放/暂停事件
+    - 第二种
+        + https://developers.weixin.qq.com/miniprogram/dev/api/wx.createInnerAudioContext.html
+        + 自己创建按钮来控制事件播放
+    
+```html
+<block wx:if="{{audio_path}}">
+    <audio name="{{title}}" author="趣儿养" src="{{audio_path}}" id="myAudio" controls="{{true}}"></audio>
+    <view class="audio_btn">
+        <view>
+            <van-button size="small" plain type="danger" bind:click="audioPause" custom-class="audio_pause">暂停</van-button>
+        </view>
+        <view>
+            <van-button size="small" plain type="primary" bind:click="audioPlay" custom-class="audio_play">播放</van-button>
+        </view>
+        
+    </view>
+    
+</block>
+
+<script>
+    onLoad:function(){
+        // audio id
+        o.audioCtx = wx.createAudioContext('myAudio');
+    },
+    audioPlay: function (e) {
+        // 开始播放
+        this.audioCtx.play()
+    },
+    audioPause: function (e) {
+        // 暂停播放
+        this.audioCtx.pause()
+    },
+    // 第二种方法,创建开始/暂停按钮
+    const test = wx.createInnerAudioContext();
+
+    // url
+    test.src = t.data.audio_path;
+    // 自动播放
+    test.autoplay = true;
+    
+</script>
+```
