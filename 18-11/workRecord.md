@@ -818,3 +818,15 @@ $re_count = $db->getOne("SELECT COUNT(*) FROM {$config->db_prefix}article_info a
     
 </script>
 ```
+
+# 2018-12-7
+
+- webApp
+    + https://www.cnblogs.com/zqunor/articles/6820972.html
+    + https://segmentfault.com/a/1190000011154120
+    + https://blog.csdn.net/csdn100861/article/details/78585333#6-ionicangular%E5%92%8Ccordova
+    + https://blog.csdn.net/bangrenzhuce/article/details/52610928
+    + https://blog.csdn.net/timtian008/article/details/54890514
+- JDK
+    + JDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。
+- https://uniapp.dcloud.io/
