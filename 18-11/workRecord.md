@@ -830,3 +830,19 @@ $re_count = $db->getOne("SELECT COUNT(*) FROM {$config->db_prefix}article_info a
 - JDK
     + JDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。
 - https://uniapp.dcloud.io/
+
+# 2018-12-8
+
+- Js 相减会出现很多小数点
+    + 后端做
+
+# 2018-12-10
+
+- Vue 
+    + imgsrc
+    + https://www.sunzhongwei.com/using-the-vue-for-image-src-value-assignment
+- PHP json字符串 转数组
+    - // 将json字符串转成数组
+    $list[$key][$k] = json_decode($v,true);
+    + 这样前端就不会转成 json 字符串
+    + $list[$key][$k][$keyu] = json_decode(json_encode($res),true);
