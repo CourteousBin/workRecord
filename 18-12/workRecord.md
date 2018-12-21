@@ -172,3 +172,10 @@ echo $query->createCommand()->getRawSql();
 
 高效的使用调试工具开发效率会更高一点。
 
+
+# 2018-12-20 16:25:00
+
+- http://ask.dcloud.net.cn/article/35128
+- Vuex
+    - https://www.jianshu.com/p/a804606ad8e9
+    - https://segmentfault.com/a/1190000015782272
