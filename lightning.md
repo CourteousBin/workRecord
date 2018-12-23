@@ -36,6 +36,8 @@
     + ctrl + enter
 - 向上插行
     + ctrl + shift + enter
+- 创建5个div类名为box、内容为1-5
+    + 输入：div.box{$}5
 
 ### HBuilder X
 
@@ -90,3 +92,21 @@
 
 
 ## 代码风格指南
+
+- 异步请求,如成功码为 0 ;
+```js
+    const ScuucessCode = 0; 
+    $.ajax({
+        type:"GET",
+        url:"",
+        dataType:"json",
+        success:function(data){
+           if(data.code == ScuucessCode){
+
+           }else{
+            
+           }
+        }
+    });
+
+```

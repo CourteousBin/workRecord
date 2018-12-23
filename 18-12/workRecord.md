@@ -179,3 +179,103 @@ echo $query->createCommand()->getRawSql();
 - Vuex
     - https://www.jianshu.com/p/a804606ad8e9
     - https://segmentfault.com/a/1190000015782272
+
+# 2018-12-22 14:44:49
+
+- sticky-footer
+    + https://www.cnblogs.com/shicongbuct/p/6487122.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>Document</title>
+        <style type="text/css">
+            html,
+            body,
+            .wrapper {
+                height: 100%;
+            }
+
+            .content {
+                padding-bottom: 150px;
+                /* 必须使用和footer相同的高度 */
+            }
+
+            .footer {
+                position: relative;
+                margin-top: -150px;
+                /* footer高度的负值 */
+                height: 150px;
+                clear: both;
+            }
+            /*清除浮动的方式*/
+            .clearfix {
+                display: inline-block;
+            }
+
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper clearfix">
+            <div class="content"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora rerum facilis amet error velit voluptatum animi vel consequuntur totam ea omnis exercitationem aperiam quidem atque quibusdam nisi qui accusantium saepe.</div>
+            <div>Suscipit dolore accusamus nam consequuntur voluptas quos placeat magni harum deserunt ratione! Error officia reiciendis ducimus impedit corrupti nesciunt iste quae ut autem quod dolores ipsum eius ipsa blanditiis eum?</div>
+            </div>
+
+        </div>
+        <div class="footer">abc</div>
+    </body>
+    <script src="jquery-1.11.3.js"></script>
+    </body>
+</html>
+
+```
+
+- flex 用法
+- 左边固定宽度右边大小自适应
+- http://www.runoob.com/cssref/css3-pr-flex.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>Document</title>
+        <style type="text/css">
+            .contaienr {
+                position: absolute;
+                display: flex;
+                top:174px;
+                bottom: 46px;
+                width: 100%;
+                overflow: hidden;
+            }
+            .left {
+                flex: 0 0 80px;
+                width: 80px;
+                background: #f3f5f7;
+            }
+            .right {
+                flex: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contaienr">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </body>
+    <script src="jquery-1.11.3.js"></script>
+    </body>
+</html>
+
+```
