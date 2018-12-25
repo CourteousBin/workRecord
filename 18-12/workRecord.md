@@ -279,3 +279,28 @@ echo $query->createCommand()->getRawSql();
 </html>
 
 ```
+
+
+## 2018-12-25 10:58:56
+
+- 后台把复制的腾讯视频网址
+    + 更改成 拿到 vid
+    + https://v.qq.com/x/cover/sj1mkqd79hj5zod/c081769xa43.html
+    + vid = c081769xa43
+    + 在接口处 , 把 video 替换成 txv-video
+    + 再给前端
+- 小程序插件
+    + https://www.jianshu.com/p/c35ebea33e9a
+- 修改 wxparse
+    + video 改成 txv-video
+    + wxParse.wxml
+        * 在最后增加
+```html
+<template name="wxParseTxvVideo">
+   <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+        <txv-video class="{{item.classStr}} wxParse-{{item.tag}}-video" vid="{{item.attr.vid}}" playerid="{{item.attr.playerid}}"></txv-video>
+    </view>
+</template>
+```
+- 权限控制
+    + https://juejin.im/post/5c1f8d6c6fb9a049e06353aa
