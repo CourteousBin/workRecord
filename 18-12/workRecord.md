@@ -304,3 +304,27 @@ echo $query->createCommand()->getRawSql();
 ```
 - 权限控制
     + https://juejin.im/post/5c1f8d6c6fb9a049e06353aa
+
+## 2018-12-28 09:49:03
+
+- 子组件 onload
+    + https://ask.dcloud.net.cn/question/61843
+
+## 2019-1-2 12:33:17
+
+- adb
+    - https://www.cnblogs.com/oukele/p/9967291.html
+- map组件markertap事件失效 
+    + https://ask.dcloud.net.cn/question/58240
+- 坐标系
+    + https://blog.csdn.net/u014322206/article/details/83055355
+- 精度问题
+    + https://www.imooc.com/article/details/id/23512
+- 高德sdk
+    + https://ask.dcloud.net.cn/article/35070
+
+2019-1-3 18:11:31
+
+- 拖拉式组件
+    + https://jexordexan.github.io/vue-slicksort/?selectedKind=Vertical%20sorting&selectedStory=Simple%20list&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel
+- Vue
